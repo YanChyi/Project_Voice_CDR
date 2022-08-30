@@ -1,0 +1,6 @@
+version: 2
+
+sources:
+  - name: voice_cdr
+    database: airbyte
+    schema: voice_cdr
