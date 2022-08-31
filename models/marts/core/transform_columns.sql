@@ -24,7 +24,7 @@ select
   cast(nullif(_382, '') as integer) as roam_state,
   cast(nullif(_386, '') as integer) as roaming_country,
   cast(nullif(_389, '') as integer) as idd_country_code,
-
+  
   case 
     when _389 not in ('673','') and  _389 is not null then left(_355, 3)
     else null
