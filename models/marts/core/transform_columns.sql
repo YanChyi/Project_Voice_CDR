@@ -24,12 +24,13 @@ select
   cast(nullif(_382, '') as integer) as roam_state,
   cast(nullif(_386, '') as integer) as roaming_country,
   cast(nullif(_389, '') as integer) as idd_country_code,
-
+  
   case 
-    when _389 not in ('673','') and  _389 is not null then left(_355, 3)
+    when left(_355, 3) like ('00_') then 'normal rate'
+    when left(_355, 3) in ('089', '098') then 'voip rate'
     else null
   end as idd_prefix,
-  
+
   cast(
     (case
       when _53 = '2000' then _55
